@@ -4,11 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
-    <script src="./index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="./index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
+<style>
+    body {
+        background: linear-gradient(135deg, #8989bd, #3a0ca3);
+    }
+    main {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(45deg, #badad9, #dbf6f6);
+    }
+    h1 {
+        text-align: center;
+    }
+    #startBtn {
+        display: block;
+        margin: 1.2rem auto;
+        padding: 1.2rem;
+        text-align: center;
+        background-color: #3498db;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    #startBtn:hover {
+        background-color: #2ecc71;
+    }
+    .players {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+        
+    }
+    .human_pick {
+        display: flex;
+        flex-direction: column;
+    }
+    .human_pick button {
+        margin: 0.3rem 0;
+        padding: 0.7rem;
+        font-size: 0.8rem;
+        background-color: #13ccc3;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+    .human_pick button:hover {
+        background-color: #f0e109;
+    }
+    #startBtn:active,
+    .human_pick button:active {
+        transform: scale(0.95);
+    }
+    button i {
+        font-size: 20px;
+    }
+    button .far {
+        transition: transform 0.2s ease;
+    }
+    button:hover .far {
+        transform: translateY(-5px) rotate(15deg);
+    }
+    .result {
+        margin: 2rem 0 1rem;
+        text-align: center;
+    }
+    .disable {
+        pointer-events: none;
+        background-color: #9aadad !important;
+    }
+    .computer h4 {
+        padding: 10px;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    .border {
+        border: 2px solid #000000;
+        border-radius: 6px;
+    }
+    .computer h4 .far {
+        transform: rotate(20deg);
+    }
+</style>
 <body>
-    <section class="main">
-        <h1>Rock - Paper - Scissors</h1>
-    </section>
+    <main>
+        <h1>ROCK - PAPER - SCISSORS</h1>
+        <button id="startBtn">PLAYGAME</button>
+        <div class="players">
+            <div class="computer">
+                <h2>Computer</h2>
+                <h3>0</h3>
+            </div>
+            <div class="human">
+                <h2>Human</h2>
+                <h3>0</h3>
+                <div class="human_pick">
+                    <button id="btn01"><i class="far fa-hand-rock"></i> ROCK</button>
+                    <button id="btn02"><i class="far fa-hand-paper"></i> PAPER</button>
+                    <button id="btn03"><i class="far fa-hand-scissors"></i> SCISSORS</button>
+                </div>
+            </div>
+        </div>
+        <div class="result"></div>
+    </main>
 </body>
 </html>
